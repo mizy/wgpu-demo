@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<div>
+  <canvas id="root"></canvas>
+</div>
+<script>
+  (async () => {
+    var canvas = document.getElementById('root');
+    const adapter = await navigator.gpu.requestAdapter();
+    const device = await adapter.requestDevice();
+    var ctx = canvas.getContext('webgpu');
+    ctx.fillStyle = 'rgb(200, 0, 0)';
+    ctx.fillRect(10, 10, 55, 50);
+    ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+    ctx.fillRect(30, 30, 55, 50);
+  })()
+</script>
+
+</html>
